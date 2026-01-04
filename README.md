@@ -92,29 +92,38 @@ GET/ Health
 
 Response:
 ```json
-##{"status":"ok"}
-
+{"status":"ok"}
+```
 Model Info
-
+```
 {"model_type":"Pipeline"}
+```
+Response
+```json
+{"model_type":"Pipeline"}
+```
 Prediction
+```
 POST /predict
-
-Request 
+```
+Request
+```json
 {
   "features": {
     "mean radius": 17.99,
     "mean texture": 10.38
   }
 }
+```
 response:
+```
 {
   "prediction": 0,
   "probability_class_1": 0.0123
 }
-
+```
 Dockerfile
-
+```
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -132,16 +141,25 @@ RUN python scripts/make_dataset.py \
 
 EXPOSE 8000
 CMD ["uvicorn", "ml_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
+```
 Build Image 
+```
 docker build -t python-ml-api .
+```
 Run container
+```
 docker run --rm -p 8000:8000 python-ml-api
+```
 Test 
+```
 curl http://127.0.0.1:8000/health
+```
 Swagger UI
-
+```
+http://127.0.0.1:8000/docs
+```
 Example prediction 
+```
 python - <<'EOF' > payload.json
 import pandas as pd, json
 df = pd.read_csv("data/raw/breast_cancer.csv")
@@ -152,11 +170,12 @@ EOF
 curl -X POST http://127.0.0.1:8000/predict \
   -H "Content-Type: application/json" \
   --data-binary @payload.json
-
+```
 O/p
+```
 {"prediction":0,"probability_class_1":0.0123}
 
-
+```
  Design Decisions
 	•	FastAPI: automatic validation & docs
 	•	Docker: environment consistency
