@@ -1,4 +1,4 @@
-# 🚀 Python ML API — Single-File End-to-End Project
+#  Python ML API — Single-File End-to-End Project
 
 **Author:** Adarsh Ravi  
 **Tech:** Python · FastAPI · Scikit-Learn · Docker  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project demonstrates a **complete machine-learning deployment workflow**:
 
@@ -20,7 +20,7 @@ Everything required to understand and run this project is documented **in this s
 
 ---
 
-## 🎯 What This Project Proves
+##  What This Project Proves
 
 ✔ End-to-end ML workflow  
 ✔ API engineering with FastAPI  
