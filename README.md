@@ -92,7 +92,7 @@ GET/ Health
 
 Response:
 ```json
-{"status":"ok"}
+##{"status":"ok"}
 
 Model Info
 
@@ -180,5 +180,5 @@ Limitations
 	•	Model versioning
 	•	Docker Compose
 	•	Cloud deployment
-	•	Automated tests
+	•	Automated tests##
 
